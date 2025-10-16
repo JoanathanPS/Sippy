@@ -154,6 +154,12 @@ const SippyApp = {
                 SippySettings.init();
                 console.log('✓ Settings');
             }
+
+            // Start proactive chat loop
+            if (window.SippyChat) {
+                SippyChat.startLoop();
+                console.log('✓ Chat Motivation Loop');
+            }
             
             console.log('🎉 Sippy is ready!');
             

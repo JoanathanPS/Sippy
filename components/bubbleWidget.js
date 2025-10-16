@@ -269,8 +269,14 @@ const SippyBubble = {
             face.textContent = stateData.emoji;
         }
         
-        // Update points
+        // Update points and progress ring thickness proportional to percent
         this.updatePoints();
+        const percent = SippyHydration.getPercentage();
+        const ring = this.element.querySelector('.bubble-ring');
+        if (ring) {
+            ring.style.borderTopColor = 'rgba(255,255,255,' + (0.3 + percent/200) + ')';
+            ring.style.borderRightColor = 'rgba(255,255,255,' + (0.2 + percent/300) + ')';
+        }
     },
     
     /**

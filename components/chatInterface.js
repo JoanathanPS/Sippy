@@ -3,6 +3,7 @@
  */
 
 const SippyChat = {
+    loopTimer: null,
     /**
      * Show chat message
      */
@@ -21,6 +22,17 @@ const SippyChat = {
             return SippyHydration.getMotivationalMessage();
         }
         return 'Stay hydrated! 💧';
+    },
+
+    /**
+     * Start proactive motivation loop
+     */
+    startLoop() {
+        if (this.loopTimer) clearInterval(this.loopTimer);
+        this.loopTimer = setInterval(() => {
+            const msg = this.getContextualMessage();
+            this.showMessage(msg);
+        }, 15 * 60 * 1000); // every 15 minutes
     }
 };
 

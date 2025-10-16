@@ -107,7 +107,8 @@ const SippySettings = {
         document.getElementById('themeSelect')?.addEventListener('change', (e) => {
             const theme = e.target.value;
             if (window.SippyPoints && !SippyPoints.isThemeUnlocked(theme)) {
-                alert('🔒 This theme is locked! Earn more points to unlock it.');
+                const unlocked = SippyPoints.getUnlockedThemes().join(', ');
+                alert(`🔒 This theme is locked! Earn more points to unlock it.\nUnlocked: ${unlocked}`);
                 e.target.value = SippyData.getUserData().theme || 'ocean';
                 return;
             }

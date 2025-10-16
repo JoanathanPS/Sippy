@@ -80,6 +80,10 @@ const SippyPoints = {
                 if (!localStorage.getItem(key)) {
                     localStorage.setItem(key, 'true');
                     SippyUtils.showToast(`🎨 New theme unlocked: ${theme}!`, 4000);
+                    if (window.SippyBubble) {
+                        SippyBubble.showMessage(`🎨 Theme unlocked: ${theme}`);
+                        SippyBubble.celebrate();
+                    }
                 }
             }
         });
@@ -92,6 +96,13 @@ const SippyPoints = {
         if (theme === 'ocean') return true; // Default theme
         const key = `theme_${theme}_unlocked`;
         return localStorage.getItem(key) === 'true';
+    },
+
+    /**
+     * Get all unlocked themes
+     */
+    getUnlockedThemes() {
+        return ['ocean', 'forest', 'sunset', 'midnight', 'chennai'].filter(t => this.isThemeUnlocked(t));
     },
     
     /**
