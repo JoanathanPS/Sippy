@@ -18,6 +18,8 @@ const SippyMemory = {
      */
     startGame() {
         if (this.testScheduled) return;
+        const userData = SippyData.getUserData();
+        if (userData.memoryEnabled === false) return;
         
         // Show random word
         this.currentWord = this.words[Math.floor(Math.random() * this.words.length)];

@@ -12,6 +12,9 @@
     <link rel="manifest" href="manifest.json">
     
     <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/animations.css">
@@ -52,8 +55,23 @@
         </div>
     </div>
 
-    <!-- Main Dashboard -->
-    <div id="mainDashboard" class="dashboard hidden">
+    <!-- Top Navigation -->
+    <nav class="top-nav hidden" id="topNav">
+        <div class="nav-left">
+            <span class="logo-icon">💦</span>
+            <span class="logo-text">Sippy</span>
+        </div>
+        <div class="nav-links">
+            <a href="#dashboard" class="nav-link">Dashboard</a>
+            <a href="#achievements" class="nav-link">Achievements</a>
+            <a href="#report" class="nav-link">Report</a>
+            <a href="#privacy" class="nav-link">Privacy</a>
+            <a href="#settings" class="nav-link">Settings</a>
+        </div>
+    </nav>
+
+    <!-- Page: Dashboard -->
+    <div id="page-dashboard" class="dashboard hidden">
         <!-- Header -->
         <header class="dashboard-header">
             <div class="logo">
@@ -84,7 +102,7 @@
                         <circle class="progress-ring-fill" cx="140" cy="140" r="120" id="progressCircle" />
                     </svg>
                     <div class="progress-center">
-                        <div class="progress-mascot" id="centerMascot">💧</div>
+                        <div class="progress-mascot" id="centerMascot">💦</div>
                         <div class="progress-text">
                             <span class="progress-value" id="progressPercent">0%</span>
                             <span class="progress-label">Daily Goal</span>
@@ -168,7 +186,7 @@
     <!-- Floating Bubble Widget (THE STAR) -->
     <div id="bubbleWidget" class="bubble-widget hidden" draggable="true">
         <div class="bubble-inner">
-            <div class="bubble-face" id="bubbleFace">😊</div>
+            <div class="bubble-face" id="bubbleFace">💦</div>
             <div class="bubble-points" id="bubblePoints">0</div>
             <div class="bubble-ring"></div>
         </div>
@@ -254,23 +272,62 @@
                     <input type="checkbox" id="enableActivityTracking" checked>
                     <label for="enableActivityTracking">Enable Activity Tracking</label>
                 </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="enableMemory" checked>
+                    <label for="enableMemory">Enable Hydra-Memory mini-game</label>
+                </div>
                 <div class="form-group">
                     <button class="btn-secondary" id="exportDataBtn">📥 Export Data</button>
                     <button class="btn-danger" id="wipeDataBtn">🗑️ Wipe All Data</button>
+                    <button class="btn-secondary" id="privacyInfoBtn">🔒 Privacy Info</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Achievements Modal -->
-    <div id="achievementsModal" class="modal hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>🏆 Achievements</h2>
-                <button class="close-btn" id="closeAchievements">✕</button>
+    <!-- Page: Achievements -->
+    <div id="page-achievements" class="page hidden">
+        <div class="page-container">
+            <h2>🏆 Achievements</h2>
+            <div class="achievements-grid" id="achievementsGridPage"></div>
+        </div>
+    </div>
+
+    <!-- Page: Report -->
+    <div id="page-report" class="page hidden">
+        <div class="page-container">
+            <h2>📄 My Hydration Report</h2>
+            <p>Download your daily/weekly progress as a PDF.</p>
+            <button class="btn-primary" id="downloadReportBtn">Download Report</button>
+        </div>
+    </div>
+
+    <!-- Page: Privacy -->
+    <div id="page-privacy" class="page hidden">
+        <div class="page-container">
+            <h2>🔒 Privacy Dashboard</h2>
+            <p>All processing happens locally. No login, no cloud, no telemetry.</p>
+            <div class="privacy-actions">
+                <button class="btn-secondary" id="exportDataBtnPage">📥 Export Data</button>
+                <button class="btn-danger" id="wipeDataBtnPage">🗑️ Wipe All Data</button>
             </div>
-            <div class="achievements-grid" id="achievementsGrid">
-                <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <!-- Page: Settings -->
+    <div id="page-settings" class="page hidden">
+        <div class="page-container">
+            <h2>⚙️ Settings</h2>
+            <p>Use the Settings panel from the dashboard or manage quick options here.</p>
+            <div class="form-group">
+                <label>Theme</label>
+                <select id="themeSelectPage">
+                    <option value="ocean">Ocean Breeze (Default)</option>
+                    <option value="forest">Forest Green</option>
+                    <option value="sunset">Sunset Orange</option>
+                    <option value="midnight">Midnight Purple</option>
+                    <option value="chennai">Chennai Marina</option>
+                </select>
             </div>
         </div>
     </div>

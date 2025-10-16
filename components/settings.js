@@ -26,6 +26,7 @@ const SippySettings = {
             'soundVolume': userData.soundVolume || 50,
             'enableNotifications': userData.enableNotifications !== false,
             'enableActivityTracking': userData.enableActivityTracking !== false,
+            'enableMemory': userData.memoryEnabled !== false,
             'themeSelect': userData.theme || 'ocean',
             'bubbleSize': userData.bubbleSize || 'medium'
         };
@@ -102,6 +103,10 @@ const SippySettings = {
         document.getElementById('enableActivityTracking')?.addEventListener('change', (e) => {
             SippyData.updateUserData({ enableActivityTracking: e.target.checked });
         });
+        // Enable memory game
+        document.getElementById('enableMemory')?.addEventListener('change', (e) => {
+            SippyData.updateUserData({ memoryEnabled: e.target.checked });
+        });
         
         // Theme
         document.getElementById('themeSelect')?.addEventListener('change', (e) => {
@@ -133,6 +138,10 @@ const SippySettings = {
         // Wipe data
         document.getElementById('wipeDataBtn')?.addEventListener('click', () => {
             SippyData.wipeAllData();
+        });
+        // Privacy info
+        document.getElementById('privacyInfoBtn')?.addEventListener('click', () => {
+            SippyPrivacy.showInfo();
         });
     }
 };

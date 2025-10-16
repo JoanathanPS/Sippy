@@ -52,7 +52,8 @@ const SippyDashboard = {
         const achievementsBtn = document.getElementById('achievementsBtn');
         if (achievementsBtn) {
             achievementsBtn.addEventListener('click', () => {
-                this.showAchievements();
+                location.hash = '#achievements';
+                this.renderAchievementsPage();
             });
         }
         
@@ -68,14 +69,10 @@ const SippyDashboard = {
     /**
      * Show achievements modal
      */
-    showAchievements() {
-        const modal = document.getElementById('achievementsModal');
-        const grid = document.getElementById('achievementsGrid');
-        
-        if (!modal || !grid) return;
-        
+    renderAchievementsPage() {
+        const grid = document.getElementById('achievementsGridPage');
+        if (!grid) return;
         const unlocked = SippyData.getAchievements();
-        
         grid.innerHTML = SIPPY_CONFIG.achievements.map(achievement => {
             const isUnlocked = unlocked.includes(achievement.id);
             return `
@@ -86,13 +83,6 @@ const SippyDashboard = {
                 </div>
             `;
         }).join('');
-        
-        modal.classList.remove('hidden');
-        
-        // Close button
-        document.getElementById('closeAchievements')?.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        }, { once: true });
     },
     
     /**

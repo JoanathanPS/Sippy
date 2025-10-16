@@ -65,11 +65,9 @@ const SippyApp = {
      * Start the main app
      */
     startApp() {
-        // Show dashboard
-        const dashboard = document.getElementById('mainDashboard');
-        if (dashboard) {
-            dashboard.classList.remove('hidden');
-        }
+        // Show navigation and default page
+        document.getElementById('topNav')?.classList.remove('hidden');
+        this.navigateTo(location.hash || '#dashboard');
         
         // Initialize all modules
         this.initializeModules();
@@ -167,6 +165,25 @@ const SippyApp = {
             console.error('Error initializing modules:', error);
         }
     },
+
+    /**
+     * Simple hash-based router to multi-page sections
+     */
+    navigateTo(hash) {
+        const pages = {
+            '#dashboard': 'page-dashboard',
+            '#achievements': 'page-achievements',
+            '#report': 'page-report',
+            '#privacy': 'page-privacy',
+            '#settings': 'page-settings'
+        };
+        Object.values(pages).forEach(id => document.getElementById(id)?.classList.add('hidden'));
+        const pageId = pages[hash] || pages['#dashboard'];
+        document.getElementById(pageId)?.classList.remove('hidden');
+        if (hash === '#achievements') {
+            SippyDashboard.renderAchievementsPage();
+        }
+    }
     
     /**
      * Handle page visibility change
@@ -211,6 +228,13 @@ document.addEventListener('visibilitychange', () => SippyApp.handleVisibilityCha
 window.addEventListener('resize', () => {
     if (window.SippyBubble && SippyBubble.element) {
         SippyBubble.snapToEdge();
+    }
+});
+
+// Handle hash routing
+window.addEventListener('hashchange', () => {
+    if (window.SippyApp) {
+        SippyApp.navigateTo(location.hash);
     }
 });
 

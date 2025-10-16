@@ -54,11 +54,11 @@ const SIPPY_CONFIG = {
     
     // Bubble States
     bubbleStates: {
-        hydrated: { min: 80, emoji: '😊', class: 'state-hydrated' },
-        good: { min: 60, emoji: '🙂', class: 'state-good' },
-        moderate: { min: 40, emoji: '😐', class: 'state-moderate' },
-        dehydrated: { min: 20, emoji: '😟', class: 'state-dehydrated' },
-        critical: { min: 0, emoji: '😰', class: 'state-critical' }
+        hydrated: { min: 80, emoji: '💦', class: 'state-hydrated' },
+        good: { min: 60, emoji: '💦', class: 'state-good' },
+        moderate: { min: 40, emoji: '💦', class: 'state-moderate' },
+        dehydrated: { min: 20, emoji: '💦', class: 'state-dehydrated' },
+        critical: { min: 0, emoji: '💦', class: 'state-critical' }
     },
     
     // Achievements
@@ -139,6 +139,7 @@ const SIPPY_CONFIG = {
         soundVolume: 50,
         enableNotifications: true,
         enableActivityTracking: true,
+        memoryEnabled: true,
         theme: 'ocean',
         bubbleSize: 'medium',
         language: 'en'

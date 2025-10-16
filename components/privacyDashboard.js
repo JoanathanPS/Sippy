@@ -8,7 +8,8 @@ const SippyPrivacy = {
      */
     showInfo() {
         const size = SippyData.getStorageSize();
-        SippyUtils.showToast(`Storage used: ${size} KB. All data is stored locally on your device.`, 5000);
+        const message = `All processing is local. No login, no cloud, no telemetry.\nStorage used: ${size} KB.`;
+        SippyUtils.showToast(message, 6000);
     }
 };
 

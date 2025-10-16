@@ -73,6 +73,11 @@ const SippyCharts = {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                layout: { padding: 10 },
+                scales: {
+                    x: { ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 }, grid: { display: false } },
+                    y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } }
+                },
                 plugins: {
                     legend: { display: false }
                 }

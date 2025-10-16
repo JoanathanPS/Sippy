@@ -62,7 +62,7 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     color: var(--text-primary);
     background: linear-gradient(135deg, #E3F2FD 0%, #FFFFFF 50%, #E1F5FE 100%);
     line-height: 1.6;
@@ -452,7 +452,7 @@ body {
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-md);
-    max-height: 400px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
@@ -487,7 +487,7 @@ body {
 /* Charts Section */
 .charts-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-2xl);
 }
@@ -497,11 +497,19 @@ body {
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
+    height: 320px;
+    display: flex;
+    flex-direction: column;
 }
 
 .chart-card h3 {
     color: var(--primary);
     margin-bottom: var(--spacing-md);
+}
+
+.chart-card canvas {
+    flex: 1;
+    max-height: 260px;
 }
 
 /* Actions Section */
