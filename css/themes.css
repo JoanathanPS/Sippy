@@ -1,0 +1,44 @@
+/* Sippy - Theme Styles */
+
+/* Ocean Breeze (Default) - Already in main.css */
+
+/* Forest Green Theme */
+body[data-theme="forest"] {
+    --primary: #2E7D32;
+    --accent: #66BB6A;
+    --light: #E8F5E9;
+    --success: #4CAF50;
+    --gradient-primary: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%);
+    background: linear-gradient(135deg, #E8F5E9 0%, #FFFFFF 50%, #F1F8E9 100%);
+}
+
+/* Sunset Orange Theme */
+body[data-theme="sunset"] {
+    --primary: #E65100;
+    --accent: #FF9800;
+    --light: #FFF3E0;
+    --success: #FFB74D;
+    --gradient-primary: linear-gradient(135deg, #E65100 0%, #FF9800 100%);
+    background: linear-gradient(135deg, #FFF3E0 0%, #FFFFFF 50%, #FFECB3 100%);
+}
+
+/* Midnight Purple Theme */
+body[data-theme="midnight"] {
+    --primary: #4A148C;
+    --accent: #9C27B0;
+    --light: #F3E5F5;
+    --success: #BA68C8;
+    --gradient-primary: linear-gradient(135deg, #4A148C 0%, #9C27B0 100%);
+    background: linear-gradient(135deg, #F3E5F5 0%, #FFFFFF 50%, #E1BEE7 100%);
+}
+
+/* Chennai Marina Theme */
+body[data-theme="chennai"] {
+    --primary: #01579B;
+    --accent: #0277BD;
+    --light: #E1F5FE;
+    --success: #039BE5;
+    --gradient-primary: linear-gradient(135deg, #01579B 0%, #0288D1 100%);
+    background: linear-gradient(135deg, #E1F5FE 0%, #FFF8E1 50%, #B3E5FC 100%);
+}
+

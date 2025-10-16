@@ -1,0 +1,264 @@
+/* Sippy - Responsive Styles */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .logo-text {
+        font-size: 1.25rem;
+    }
+    
+    .header-right {
+        gap: var(--spacing-sm);
+    }
+    
+    .weather-location {
+        display: none;
+    }
+    
+    .dashboard-main {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .progress-ring {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .progress-value {
+        font-size: 2rem;
+    }
+    
+    .quick-actions {
+        gap: var(--spacing-sm);
+    }
+    
+    .quick-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.875rem;
+    }
+    
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .side-panel {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .bubble-widget {
+        width: 80px;
+        height: 80px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .bubble-face {
+        font-size: 2rem;
+    }
+    
+    .bubble-points {
+        font-size: 0.75rem;
+    }
+    
+    .modal-content {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+    
+    .weather-widget {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.75rem;
+    }
+    
+    .points-display {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.875rem;
+    }
+    
+    .icon-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+    
+    .progress-container {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .progress-ring {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .progress-mascot {
+        font-size: 2rem;
+    }
+    
+    .progress-value {
+        font-size: 1.75rem;
+    }
+    
+    .progress-stats {
+        font-size: 0.875rem;
+    }
+    
+    .quick-actions {
+        flex-wrap: wrap;
+    }
+    
+    .quick-btn {
+        flex: 1 1 calc(33.333% - var(--spacing-sm));
+        min-width: 60px;
+    }
+    
+    .stats-section {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .stat-card {
+        padding: var(--spacing-md);
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .log-section h2,
+    .chart-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .actions-section {
+        flex-direction: column;
+    }
+    
+    .actions-section button {
+        width: 100%;
+    }
+    
+    .bubble-widget {
+        width: 70px;
+        height: 70px;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .bubble-face {
+        font-size: 1.75rem;
+    }
+    
+    .bubble-menu {
+        min-width: 120px;
+    }
+    
+    .bubble-message {
+        max-width: 200px;
+        font-size: 0.875rem;
+    }
+    
+    .chat-bubble {
+        max-width: 250px;
+        right: 10px;
+        bottom: 90px;
+    }
+    
+    .mascot-large {
+        font-size: 4rem;
+    }
+    
+    .welcome-card h1 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-content {
+        padding: var(--spacing-md);
+        width: 95%;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: var(--spacing-sm);
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+    .progress-ring {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .bubble-widget {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .bubble-face {
+        font-size: 1.5rem;
+    }
+}
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+    .dashboard-main {
+        max-width: 1400px;
+    }
+    
+    .progress-ring {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .stats-section {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .bubble-widget.size-medium {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .dashboard-header,
+    .bubble-widget,
+    .side-panel,
+    .modal,
+    .notification-toast,
+    .chat-bubble {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+    }
+    
+    .dashboard-main {
+        max-width: 100%;
+    }
+}
+
